@@ -8,6 +8,10 @@ This is a basic React Native Application that demonstrates the use of navigation
 * cd into the repo
 * run npm install
 
+### User Stories
+
+* As a user, I would like to be able to see my contacts by going to a separate contacts screen
+
 ### Running the app
 
 * npm start
