@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 const ContactList = () => {
   const contacts = [
@@ -12,10 +12,10 @@ const ContactList = () => {
   return (
     <View style={styles.container}>
       {contacts.map((contact, index) => (
-        <View key={index} style={styles.contact}>
+        <TouchableOpacity key={index} style={styles.contact} onPress={() => navigation.navigate('ContactDetails', { contact })}>
           <Text style={styles.text}>{contact.name}</Text>
           <Text style={styles.text}>{contact.phone}</Text>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );
@@ -28,10 +28,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   contact: {
-    marginBottom: 20,
+    marginBottom: 15,
+    padding: 15,
+    backgroundColor: '#f8f8f8',
+    borderRadius: 5,
   },
-  text: {
+  name: {
     fontSize: 18,
+    color: '#333',
+  },
+  phone: {
+    fontSize: 16,
+    color: '#666',
   },
 });
 
